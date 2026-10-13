@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { PageHero } from "@/components/PageHero";
 import { site } from "@/lib/site";
@@ -7,6 +8,8 @@ const packages = [
     name: "Kid's Birthday Bash",
     price: "from $18 / kid",
     length: "2 hours",
+    image: "/evgeniy-alyoshin-YF80qEzcEW8-unsplash.jpg",
+    imageAlt: "Kids holding bowling balls at a birthday party",
     includes: [
       "90 minutes of bowling, 2 lanes",
       "Shoe rental for everyone",
@@ -19,6 +22,8 @@ const packages = [
     name: "Group / Corporate",
     price: "from $32 / guest",
     length: "3 hours",
+    image: "/anderson-schmig-IayJpfDhj7E-unsplash.jpg",
+    imageAlt: "Modern bowling alley with digital displays",
     includes: [
       "Private lanes (6+ lanes available)",
       "Appetizer buffet + 2 drink tickets",
@@ -31,6 +36,8 @@ const packages = [
     name: "Adult Celebrations",
     price: "from $45 / guest",
     length: "3 hours",
+    image: "/emil-widlund-JYQs5QQWOX4-unsplash.jpg",
+    imageAlt: "Bowler lit by cosmic neon lights",
     includes: [
       "Cosmic lighting + DJ-ready sound",
       "Craft cocktails + full bar",
@@ -60,6 +67,8 @@ export default function EventsPage() {
         eyebrow="Parties & Events"
         title="Make the night unforgettable."
         subtitle="Birthday parties, team outings, retirements, fundraisers — if it's worth celebrating, it's worth celebrating at Strike Zone. Packages below, custom quotes on request."
+        image="/krisjanis-kazaks-85BxqGvpp5I-unsplash.jpg"
+        imageAlt="Cosmic bowling lanes with teal and green lighting"
       />
 
       <section className="mx-auto max-w-6xl px-4 py-20 md:px-6">
@@ -67,27 +76,39 @@ export default function EventsPage() {
           {packages.map((p) => (
             <div
               key={p.name}
-              className={`flex flex-col rounded-2xl border bg-ink-soft/60 p-7 transition-colors ${toneClass[p.tone]}`}
+              className={`flex flex-col overflow-hidden rounded-2xl border bg-ink-soft/60 transition-colors ${toneClass[p.tone]}`}
             >
-              <h3 className="font-display text-3xl text-cream">{p.name}</h3>
-              <div className="mt-2 flex items-baseline gap-2">
-                <span className={`text-lg font-semibold ${toneText[p.tone]}`}>{p.price}</span>
-                <span className="text-xs text-cream-soft/60">· {p.length}</span>
+              <div className="relative aspect-[4/3] w-full">
+                <Image
+                  src={p.image}
+                  alt={p.imageAlt}
+                  fill
+                  sizes="(min-width: 768px) 33vw, 100vw"
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-ink-soft via-transparent to-transparent" aria-hidden />
               </div>
-              <ul className="mt-5 space-y-2 text-sm text-cream-soft/80">
-                {p.includes.map((item) => (
-                  <li key={item} className="flex gap-2">
-                    <span className={toneText[p.tone]}>▸</span>
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-              <Link
-                href="/contact/"
-                className="mt-7 inline-flex h-11 items-center justify-center rounded-full border border-ink-line text-sm font-semibold text-cream-soft hover:border-cream"
-              >
-                Request a quote
-              </Link>
+              <div className="flex flex-1 flex-col p-7">
+                <h3 className="font-display text-3xl text-cream">{p.name}</h3>
+                <div className="mt-2 flex items-baseline gap-2">
+                  <span className={`text-lg font-semibold ${toneText[p.tone]}`}>{p.price}</span>
+                  <span className="text-xs text-cream-soft/60">· {p.length}</span>
+                </div>
+                <ul className="mt-5 space-y-2 text-sm text-cream-soft/80">
+                  {p.includes.map((item) => (
+                    <li key={item} className="flex gap-2">
+                      <span className={toneText[p.tone]}>▸</span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+                <Link
+                  href="/contact/"
+                  className="mt-7 inline-flex h-11 items-center justify-center rounded-full border border-ink-line text-sm font-semibold text-cream-soft hover:border-cream"
+                >
+                  Request a quote
+                </Link>
+              </div>
             </div>
           ))}
         </div>

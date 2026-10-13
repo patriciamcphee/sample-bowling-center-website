@@ -65,6 +65,8 @@ export default function LeaguesPage() {
         eyebrow="Leagues"
         title="Find your lane."
         subtitle="Six leagues, every night of the week, every age group. Sign up as a team or solo — we'll match you with a crew."
+        image="/steven-cordes-UINDyobcGe4-unsplash.jpg"
+        imageAlt="Vintage bowling lanes with retro masking units"
       />
 
       <section className="mx-auto max-w-6xl px-4 py-20 md:px-6">

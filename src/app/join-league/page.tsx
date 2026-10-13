@@ -8,6 +8,8 @@ export default function JoinLeaguePage() {
         eyebrow="Join a league"
         title="Lace 'em up."
         subtitle="Pick a league, tell us about yourself, and we'll match you with a team or save a spot for yours."
+        image="/persnickety-prints-rrHl2zGZ9E4-unsplash.jpg"
+        imageAlt="Bowler stepping into a throw"
       />
 
       <section className="mx-auto max-w-5xl px-4 py-16 md:px-6">

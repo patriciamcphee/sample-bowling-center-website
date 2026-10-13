@@ -8,6 +8,9 @@ export default function ReservePage() {
         eyebrow="Reserve"
         title="Grab a lane."
         subtitle="Pick a date, pick a time, pick a party size — we'll hold your lane until 15 minutes after your reservation."
+        image="/marc-mueller-lwTSdfXfskE-unsplash.jpg"
+        imageAlt="Rack of colorful bowling balls"
+        imagePosition="center 30%"
       />
 
       <section className="mx-auto max-w-5xl px-4 py-16 md:px-6">

@@ -40,6 +40,8 @@ export default function PricingPage() {
         eyebrow="Pricing"
         title="Straightforward rates."
         subtitle="Pay per game or reserve a lane by the hour. Group discounts kick in at 4+ lanes — check the Events page for packages."
+        image="/ella-christenson-l6DorjudX64-unsplash.jpg"
+        imageAlt="Bowling ball striking pins at lane 6"
       />
 
       <section className="mx-auto max-w-6xl px-4 py-16 md:px-6">

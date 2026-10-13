@@ -9,6 +9,8 @@ export default function ContactPage() {
         eyebrow="Visit"
         title="Come say hi."
         subtitle="Address, hours, and the fastest ways to reach us. Group inquiry? Use the form — we'll follow up within a business day."
+        image="/zeynep-sude-emek-DY-b1e5OND8-unsplash.jpg"
+        imageAlt="Modern bowling alley with colorful ball rack"
       />
 
       <section className="mx-auto max-w-6xl px-4 py-16 md:px-6">

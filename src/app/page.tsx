@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { site } from "@/lib/site";
 
@@ -6,7 +7,16 @@ export default function Home() {
     <>
       {/* Hero */}
       <section className="relative overflow-hidden border-b border-ink-line/60">
-        <div className="absolute inset-0 bg-grid opacity-60" aria-hidden />
+        <Image
+          src="/karla-rivera-TS2_PvGhGgs-unsplash.jpg"
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover opacity-45"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-ink/50 via-ink/40 to-ink" aria-hidden />
+        <div className="absolute inset-0 bg-grid opacity-30" aria-hidden />
         <div
           className="absolute -top-32 left-1/2 h-[500px] w-[500px] -translate-x-1/2 rounded-full opacity-30 blur-3xl"
           style={{
@@ -15,7 +25,8 @@ export default function Home() {
           }}
           aria-hidden
         />
-        <div className="absolute -bottom-20 right-10 h-[320px] w-[320px] rounded-full opacity-30 blur-3xl"
+        <div
+          className="absolute -bottom-20 right-10 h-[320px] w-[320px] rounded-full opacity-30 blur-3xl"
           style={{
             background:
               "radial-gradient(circle, var(--color-cyan) 0%, transparent 60%)",
@@ -31,7 +42,7 @@ export default function Home() {
             Strike Zone<br />
             <span className="text-magenta">Lanes</span>
           </h1>
-          <p className="mt-6 max-w-xl text-lg text-cream-soft/80">
+          <p className="mt-6 max-w-xl text-lg text-cream-soft/85 drop-shadow">
             {site.shortDesc} Open seven days a week — bring the family, book a date, host the party.
           </p>
           <div className="mt-9 flex flex-col gap-3 sm:flex-row">
@@ -49,7 +60,7 @@ export default function Home() {
             </Link>
             <Link
               href="/events/"
-              className="inline-flex h-12 items-center justify-center rounded-full border border-ink-line px-7 text-sm font-semibold text-cream-soft hover:border-cream-soft transition-colors"
+              className="inline-flex h-12 items-center justify-center rounded-full border border-ink-line bg-ink/30 backdrop-blur px-7 text-sm font-semibold text-cream-soft hover:border-cream-soft transition-colors"
             >
               Host an Event
             </Link>
@@ -93,8 +104,39 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Cosmic Fridays feature */}
+      <section className="relative overflow-hidden border-y border-ink-line/60">
+        <Image
+          src="/ryan-ancill-vqypTnALDyw-unsplash.jpg"
+          alt="Cosmic bowling with neon lights"
+          fill
+          sizes="100vw"
+          className="object-cover opacity-60"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/60 to-transparent" aria-hidden />
+        <div className="relative mx-auto grid max-w-6xl gap-10 px-4 py-24 md:grid-cols-2 md:px-6 md:py-32">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.35em] text-magenta glow-magenta">
+              Fridays · 9pm – close
+            </p>
+            <h2 className="mt-4 font-display text-5xl text-cream md:text-6xl glow-magenta">
+              Cosmic Fridays.
+            </h2>
+            <p className="mt-5 max-w-md text-lg text-cream-soft/90">
+              Black lights, laser show, DJ on the mezzanine. $30 per person gets you unlimited bowling until we close the house down. 18+ after 10pm.
+            </p>
+            <Link
+              href="/pricing/"
+              className="mt-7 inline-flex h-12 items-center justify-center rounded-full bg-magenta px-7 text-sm font-semibold text-ink hover:bg-magenta-soft"
+            >
+              See all specials
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* League + Event CTAs */}
-      <section className="mx-auto max-w-6xl px-4 pb-20 md:px-6">
+      <section className="mx-auto max-w-6xl px-4 py-20 md:px-6">
         <div className="grid gap-6 md:grid-cols-2">
           <div className="relative overflow-hidden rounded-2xl border border-ink-line bg-gradient-to-br from-ink-soft to-ink p-10">
             <p className="text-xs font-semibold uppercase tracking-widest text-magenta">For the regulars</p>

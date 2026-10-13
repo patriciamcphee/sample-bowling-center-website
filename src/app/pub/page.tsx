@@ -40,6 +40,8 @@ export default function PubPage() {
         eyebrow="Pub & Grill"
         title="Best burger in Lakewood."
         subtitle="Scratch kitchen, 20 taps, and plates big enough to share. Open for lunch, dinner, and the 10pm craving. Full menu available at the lanes."
+        image="/luke-witter-QmecLAaLv7E-unsplash.jpg"
+        imageAlt="Dimly lit pub interior with neon sign"
       />
 
       <section className="mx-auto max-w-6xl px-4 py-16 md:px-6">
