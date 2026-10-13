@@ -1,26 +1,48 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+  --font-display: var(--font-bebas), ui-sans-serif, system-ui, sans-serif;
+
+  --color-ink: #0a0a14;
+  --color-ink-soft: #15152a;
+  --color-ink-line: #262645;
+  --color-cream: #faf3e3;
+  --color-cream-soft: #e7dfc9;
+  --color-magenta: #ff2e9b;
+  --color-magenta-soft: #ff6ab7;
+  --color-cyan: #00e5ff;
+  --color-amber: #ffb84d;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html,
+body {
+  background-color: var(--color-ink);
+  color: var(--color-cream);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+.font-display {
+  font-family: var(--font-display);
+  letter-spacing: 0.01em;
+}
+
+.bg-grid {
+  background-image:
+    linear-gradient(to right, rgba(255, 46, 155, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 229, 255, 0.08) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+.glow-magenta {
+  text-shadow: 0 0 24px rgba(255, 46, 155, 0.45);
+}
+
+.glow-cyan {
+  text-shadow: 0 0 24px rgba(0, 229, 255, 0.4);
 }

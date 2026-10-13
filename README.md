@@ -1,36 +1,62 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Sample Bowling Center Website
 
-## Getting Started
+A portfolio sample site for a fictional bowling alley — **Strike Zone Lanes** — built with Next.js, Tailwind, and deployed as a static site to GitHub Pages.
 
-First, run the development server:
+Modeled loosely on the information architecture of real bowling center sites (e.g. Brandon Crossroads Bowl). All copy, business details, menus, and pricing are invented for the demo.
+
+## What's in it
+
+- Home with hero, specials strip, feature grid, league + event CTAs, hours & location
+- Leagues (6 fictional leagues with signup deep-links)
+- Events & Parties (3 packages + meeting-room section)
+- Reserve a Lane (mock form with fake confirmation code)
+- Join a League (mock form that prefills from `?league=` query)
+- Pricing (walk-in rates, hourly lane rentals, weekly specials)
+- Pub & Grill (full menu, drinks)
+- Contact / Visit (address, hours, mock contact form)
+
+Because this is deployed as a **static export** on GitHub Pages, forms are UI-only — they fake a submit, show a confirmation screen, and don't send any data.
+
+## Stack
+
+- Next.js 16 (App Router) + React 19
+- Tailwind CSS 4 (via `@theme`)
+- TypeScript
+- Deployed via GitHub Actions → GitHub Pages
+
+## Local dev
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Visit <http://localhost:3000>.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Build / preview the static export
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npx serve out
+```
 
-## Learn More
+The static site is emitted to `./out`. Note that `basePath` is only applied in production builds, so local dev serves at `/`.
 
-To learn more about Next.js, take a look at the following resources:
+## Deployment
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Pushes to `main` trigger `.github/workflows/deploy.yml`, which builds the static export and publishes to GitHub Pages. The site is served at `https://<owner>.github.io/sample-bowling-center-website/`.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+If you fork or rename the repo, update the `repo` constant in `next.config.ts` to match the new repo name (used for `basePath` / `assetPrefix`).
 
-## Deploy on Vercel
+## Where to edit content
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+| What            | Where                                   |
+| --------------- | --------------------------------------- |
+| Business info   | `src/lib/site.ts`                       |
+| Home sections   | `src/app/page.tsx`                      |
+| Leagues         | `src/app/leagues/page.tsx` (array)      |
+| Event packages  | `src/app/events/page.tsx` (array)       |
+| Pricing & deals | `src/app/pricing/page.tsx` (arrays)     |
+| Pub menu        | `src/app/pub/page.tsx` (menu object)    |
+| Nav items       | `src/lib/site.ts` (`nav` array)         |
+| Theme colors    | `src/app/globals.css` (`@theme` block)  |
