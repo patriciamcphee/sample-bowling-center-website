@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { asset } from "@/lib/asset";
 
 export function PageHero({
   eyebrow,
@@ -20,7 +21,7 @@ export function PageHero({
       {image && (
         <>
           <Image
-            src={image}
+            src={asset(image)}
             alt={imageAlt}
             fill
             priority

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { site } from "@/lib/site";
+import { asset } from "@/lib/asset";
 
 export default function Home() {
   return (
@@ -8,7 +9,7 @@ export default function Home() {
       {/* Hero */}
       <section className="relative overflow-hidden border-b border-ink-line/60">
         <Image
-          src="/karla-rivera-TS2_PvGhGgs-unsplash.jpg"
+          src={asset("/karla-rivera-TS2_PvGhGgs-unsplash.jpg")}
           alt=""
           fill
           priority
@@ -107,7 +108,7 @@ export default function Home() {
       {/* Cosmic Fridays feature */}
       <section className="relative overflow-hidden border-y border-ink-line/60">
         <Image
-          src="/ryan-ancill-vqypTnALDyw-unsplash.jpg"
+          src={asset("/ryan-ancill-vqypTnALDyw-unsplash.jpg")}
           alt="Cosmic bowling with neon lights"
           fill
           sizes="100vw"

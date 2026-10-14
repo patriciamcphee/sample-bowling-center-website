@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { PageHero } from "@/components/PageHero";
 import { site } from "@/lib/site";
+import { asset } from "@/lib/asset";
 
 const packages = [
   {
@@ -80,7 +81,7 @@ export default function EventsPage() {
             >
               <div className="relative aspect-[4/3] w-full">
                 <Image
-                  src={p.image}
+                  src={asset(p.image)}
                   alt={p.imageAlt}
                   fill
                   sizes="(min-width: 768px) 33vw, 100vw"
